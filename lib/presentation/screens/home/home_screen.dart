@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:widget_app/config/theme/menu/menu_items.dart';
-import 'package:widget_app/presentation/screens/cards/cards.screen.dart';
 
 class HomeScren extends StatelessWidget {
   const HomeScren({super.key});
