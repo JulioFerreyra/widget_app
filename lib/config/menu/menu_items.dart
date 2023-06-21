@@ -16,5 +16,6 @@ class MenuIten {
 const List<MenuIten> appMenuItems = [
   MenuIten(title: "Botones", subtitle: "Varions botones en flutter", url: "/buttons", icon: Icons.smart_button),
   MenuIten(title: "Tarjetas", subtitle: "Un contenedor estilizado", url: "/cards", icon: Icons.credit_card),
+  MenuIten(title: "ProgressIndicators", subtitle: "Genedaros y controlados", url: "/progress", icon: Icons.refresh_rounded),
 
 ];
