@@ -173,7 +173,7 @@ class _CardType4 extends StatelessWidget {
         Align(
             alignment: Alignment.topRight,
             child: Container(
-              decoration:  BoxDecoration( color: Colors.white, borderRadius:  BorderRadius.only(bottomLeft: Radius.circular(20))),
+              decoration: const BoxDecoration( color: Colors.white, borderRadius:  BorderRadius.only(bottomLeft: Radius.circular(20))),
               child: IconButton(
                 icon: const Icon(Icons.more_vert_outlined),
                 onPressed: () {},
