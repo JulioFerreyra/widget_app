@@ -12,5 +12,6 @@ final appRouter = GoRouter(
   GoRoute(name: ButtonsScreen.name,path: "/buttons", builder: (context, state) => const ButtonsScreen()),
   GoRoute(name: ProgressScreen.name, path: "/progress", builder: (context, state) => const ProgressScreen()),
   GoRoute(name: SnackbarScreen.name, path: "/snackbars", builder: (context, state) => const SnackbarScreen()),
+  GoRoute(name: AnimatedScreen.name, path: "/animated", builder: (context, state) => const AnimatedScreen()),
   ]
 );
