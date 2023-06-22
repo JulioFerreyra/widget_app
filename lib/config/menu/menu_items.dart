@@ -19,5 +19,6 @@ const List<MenuIten> appMenuItems = [
   MenuIten(title: "ProgressIndicators", subtitle: "Genedaros y controlados", url: "/progress", icon: Icons.refresh_rounded),
   MenuIten(title: "Indicadores y dialogos", subtitle: "Indicadores en pantalla", url: "/snackbars", icon: Icons.info_outline),
   MenuIten(title: "Animated container", subtitle: "Stateful widget animado", url: "/animated", icon: Icons.check_box),
+  MenuIten(title: "Ui controls + Tiles", subtitle: "Serie de controles en flutter", url: "/ui-control", icon: Icons.car_rental),
   
 ];

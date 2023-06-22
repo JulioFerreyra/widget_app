@@ -34,7 +34,8 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
           height: height <= 0 ? 0 : height,
           decoration: BoxDecoration(
             color: color,
-            borderRadius: BorderRadius.circular(borderRadius <= 0 ? 0 : borderRadius),
+            borderRadius:
+                BorderRadius.circular(borderRadius <= 0 ? 0 : borderRadius),
           ),
         ),
       ),
@@ -49,10 +50,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
     borderRadius = random.nextInt(100) + 20;
 
     color = Color.fromRGBO(
-    random.nextInt(255), 
-    random.nextInt(255), 
-    random.nextInt(255), 
-    1);
+        random.nextInt(255), random.nextInt(255), random.nextInt(255), 1);
     setState(() {});
   }
 }
