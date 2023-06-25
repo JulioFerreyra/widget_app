@@ -49,4 +49,9 @@ const List<MenuIten> appMenuItems = [
       subtitle: "Aprende a usar la aplicación con el siguiente tutorial",
       url: "/tutorial",
       icon: Icons.accessible_rounded),
+  MenuIten(
+      title: "InfiniteScroll y Pull",
+      subtitle: "Listas infinitas",
+      url: "/infinite",
+      icon: Icons.list_rounded),
 ];
