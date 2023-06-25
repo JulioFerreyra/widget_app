@@ -44,6 +44,7 @@ class _UiControlViewState extends State<_UiControlView> {
           value: isDeveloper,
           onChanged: (value) => setState(() {
             isDeveloper = !isDeveloper;
+            
           }),
           title: const Text("Developer mode"),
           subtitle: const Text("Controles adicionales"),
