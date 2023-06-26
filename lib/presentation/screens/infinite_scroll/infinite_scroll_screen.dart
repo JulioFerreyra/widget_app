@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -44,25 +42,32 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
         context: context,
         removeTop: true,
         removeBottom: true,
-        child: ListView.builder(
-          controller: scrollController,
-          itemCount: imagesId.length,
-          itemBuilder: (BuildContext context, int index) {
-            return FadeInImage(
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: 300,
-              image: NetworkImage(
-                  "https://picsum.photos/id/${imagesId[index]}/500/300"),
-              placeholder: const AssetImage("assets/Images/jar-loading.gif"),
-            );
-          },
+        child: RefreshIndicator(
+          onRefresh: onRefresh,
+          edgeOffset: 10,
+          strokeWidth: 2,
+          child: ListView.builder(
+            controller: scrollController,
+            itemCount: imagesId.length,
+            itemBuilder: (BuildContext context, int index) {
+              return FadeInImage(
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: 300,
+                image: NetworkImage(
+                    "https://picsum.photos/id/${imagesId[index]}/500/300"),
+                placeholder: const AssetImage("assets/Images/jar-loading.gif"),
+              );
+            },
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (() => context.pop()),
         elevation: 5,
-        child: const Icon(Icons.arrow_back_ios_new),
+        child: !isLoading
+            ? const Icon(Icons.arrow_back_ios_new)
+            : const CircularProgressIndicator(),
       ),
     );
   }
@@ -70,18 +75,32 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
   void addFiveImages() {
     final lastId = imagesId.last;
     imagesId.addAll([1, 2, 3, 4, 5].map((e) => lastId + e));
-    setState(() {});
   }
 
   Future loadNextPage() async {
     if (isLoading) return;
     isLoading = true;
-    setState(() => Void);
+    setState(() {});
     await Future.delayed(const Duration(seconds: 1));
 
     addFiveImages();
     isLoading = false;
     if (!isMounted) return;
-    setState(() => Void);
+    setState(() {});
+
+    // todo: mover scroll
+  }
+
+  Future<void> onRefresh() async {
+    isLoading = true;
+    setState(() {});
+    await Future.delayed(const Duration(seconds: 3));
+    if (!isMounted) return;
+    isLoading = false;
+    final lastId = imagesId.length;
+    imagesId.clear();
+    imagesId.add(lastId + 1);
+    addFiveImages();
+    setState(() {});
   }
 }
