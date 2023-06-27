@@ -1,8 +1,13 @@
 import 'package:go_router/go_router.dart';
+import 'package:widget_app/presentation/screens/counter/counter_screen.dart';
 
 import '../../presentation/screens/screens.dart';
 
 final appRouter = GoRouter(initialLocation: "/", routes: [
+  GoRoute(
+      name: CounterScreen.name,
+      path: "/",
+      builder: (context, state) => const CounterScreen()),
   GoRoute(
       name: HomeScren.name,
       path: "/",
