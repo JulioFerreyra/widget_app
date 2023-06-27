@@ -17,10 +17,8 @@ class CounterScreen extends StatelessWidget {
         child: const Icon(Icons.plus_one),
       ),
       body: Center(
-        child: Text(
-          "Valor: $counter",
-          style: const TextStyle(fontSize: 30),
-        ),
+        child: Text("Valor: $counter",
+            style: Theme.of(context).textTheme.titleLarge),
       ),
     );
   }
