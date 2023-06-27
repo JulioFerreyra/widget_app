@@ -59,4 +59,9 @@ const List<MenuIten> appMenuItems = [
       subtitle: "Listas infinitas",
       url: "/infinite",
       icon: Icons.list_rounded),
+  MenuIten(
+      title: "Theme change",
+      subtitle: "Cambiar el tema",
+      url: "/themes",
+      icon: Icons.color_lens),
 ];
